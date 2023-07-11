@@ -24,6 +24,8 @@
 		EFBFD1242A5C1CE4005C4721 /* NewsfeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFD1232A5C1CE4005C4721 /* NewsfeedCell.swift */; };
 		EFBFD1262A5C1D04005C4721 /* NewsfeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFBFD1252A5C1D04005C4721 /* NewsfeedCell.xib */; };
 		EFBFD1292A5C47C2005C4721 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFD1282A5C47C2005C4721 /* WebImageView.swift */; };
+		EFD047172A5D579700AC4ABD /* NewsfeedCellLayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD047162A5D579700AC4ABD /* NewsfeedCellLayoutCalculator.swift */; };
+		EFD047192A5D630100AC4ABD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD047182A5D630100AC4ABD /* String+Extensions.swift */; };
 		F0A1F8732406E838002A9CCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1F8722406E838002A9CCC /* AppDelegate.swift */; };
 		F0A1F8752406E838002A9CCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1F8742406E838002A9CCC /* SceneDelegate.swift */; };
 		F0A1F8772406E838002A9CCC /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1F8762406E838002A9CCC /* AuthViewController.swift */; };
@@ -64,6 +66,8 @@
 		EFBFD1232A5C1CE4005C4721 /* NewsfeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedCell.swift; sourceTree = "<group>"; };
 		EFBFD1252A5C1D04005C4721 /* NewsfeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsfeedCell.xib; sourceTree = "<group>"; };
 		EFBFD1282A5C47C2005C4721 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		EFD047162A5D579700AC4ABD /* NewsfeedCellLayoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedCellLayoutCalculator.swift; sourceTree = "<group>"; };
+		EFD047182A5D630100AC4ABD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		F0A1F86F2406E838002A9CCC /* VkNewsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkNewsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A1F8722406E838002A9CCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0A1F8742406E838002A9CCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			children = (
 				EFBFD1232A5C1CE4005C4721 /* NewsfeedCell.swift */,
 				EFBFD1252A5C1D04005C4721 /* NewsfeedCell.xib */,
+				EFD047162A5D579700AC4ABD /* NewsfeedCellLayoutCalculator.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				EFBFD1282A5C47C2005C4721 /* WebImageView.swift */,
+				EFD047182A5D630100AC4ABD /* String+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -319,11 +325,13 @@
 				EFBFD11D2A5C076F005C4721 /* NewsfeedViewController.swift in Sources */,
 				F0A1F8772406E838002A9CCC /* AuthViewController.swift in Sources */,
 				F0A1F8732406E838002A9CCC /* AppDelegate.swift in Sources */,
+				EFD047192A5D630100AC4ABD /* String+Extensions.swift in Sources */,
 				EFBFD1192A5C076F005C4721 /* NewsfeedPresenter.swift in Sources */,
 				EFBFD11B2A5C076F005C4721 /* NewsfeedRouter.swift in Sources */,
 				F0A1F8752406E838002A9CCC /* SceneDelegate.swift in Sources */,
 				EF1F6C102A5837F20069D95D /* NetworkService.swift in Sources */,
 				EFBFD11C2A5C076F005C4721 /* NewsfeedModels.swift in Sources */,
+				EFD047172A5D579700AC4ABD /* NewsfeedCellLayoutCalculator.swift in Sources */,
 				EFBFD1292A5C47C2005C4721 /* WebImageView.swift in Sources */,
 				EF1F6C172A585D4D0069D95D /* NetworkDataFetcher.swift in Sources */,
 				EFBFD11A2A5C076F005C4721 /* NewsfeedWorker.swift in Sources */,
