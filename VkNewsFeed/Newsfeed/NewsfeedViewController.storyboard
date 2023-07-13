@@ -17,9 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92l-MB-Jf1" customClass="GradientView" customModule="VkNewsFeed" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="1" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="1" green="0.81568627450980391" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AUl-9j-nC9">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="Brl-Sv-mNi">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="5vE-9E-7et"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="c2z-zy-6cI"/>
@@ -27,11 +44,15 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AUl-9j-nC9" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="FaM-4y-tlE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="AUl-9j-nC9" secondAttribute="bottom" id="KGU-Fe-xOq"/>
+                            <constraint firstItem="92l-MB-Jf1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="b6S-4I-HPP"/>
+                            <constraint firstItem="92l-MB-Jf1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dgt-Lg-JB3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="92l-MB-Jf1" secondAttribute="bottom" id="dju-TD-pAQ"/>
                             <constraint firstItem="AUl-9j-nC9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sY7-LF-Tc6"/>
+                            <constraint firstItem="92l-MB-Jf1" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="svz-c8-HuK"/>
                             <constraint firstItem="AUl-9j-nC9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="vS2-eR-vX1"/>
                         </constraints>
                     </view>
@@ -49,8 +70,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

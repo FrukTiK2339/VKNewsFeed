@@ -15,6 +15,9 @@
 		EFAF50EB2A5FE083005DF359 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAF50EA2A5FE083005DF359 /* TitleView.swift */; };
 		EFAF50ED2A5FE0F6005DF359 /* InsetableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAF50EC2A5FE0F6005DF359 /* InsetableTextField.swift */; };
 		EFAF50EF2A5FE7FE005DF359 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAF50EE2A5FE7FE005DF359 /* UserResponse.swift */; };
+		EFAF50F22A600FDE005DF359 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAF50F12A600FDE005DF359 /* FooterView.swift */; };
+		EFAF50F42A601335005DF359 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = EFAF50F32A601335005DF359 /* Localizable.stringsdict */; };
+		EFAF50F62A60188B005DF359 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAF50F52A60188B005DF359 /* GradientView.swift */; };
 		EFB0A4E72A5EBA140034F807 /* GalleryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB0A4E62A5EBA140034F807 /* GalleryCollectionView.swift */; };
 		EFB0A4E92A5EBAB20034F807 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB0A4E82A5EBAB20034F807 /* GalleryCollectionViewCell.swift */; };
 		EFB0A4EB2A5EE69B0034F807 /* RowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB0A4EA2A5EE69B0034F807 /* RowLayout.swift */; };
@@ -65,6 +68,9 @@
 		EFAF50EA2A5FE083005DF359 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		EFAF50EC2A5FE0F6005DF359 /* InsetableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetableTextField.swift; sourceTree = "<group>"; };
 		EFAF50EE2A5FE7FE005DF359 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		EFAF50F12A600FDE005DF359 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		EFAF50F32A601335005DF359 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
+		EFAF50F52A60188B005DF359 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		EFB0A4E62A5EBA140034F807 /* GalleryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionView.swift; sourceTree = "<group>"; };
 		EFB0A4E82A5EBAB20034F807 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		EFB0A4EA2A5EE69B0034F807 /* RowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLayout.swift; sourceTree = "<group>"; };
@@ -149,6 +155,23 @@
 			path = TitleView;
 			sourceTree = "<group>";
 		};
+		EFAF50F02A600FC8005DF359 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				EFAF50F12A600FDE005DF359 /* FooterView.swift */,
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
+		EFAF50F72A601CC4005DF359 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EFBFD1282A5C47C2005C4721 /* WebImageView.swift */,
+				EFAF50F52A60188B005DF359 /* GradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EFB0A4E52A5EB9FF0034F807 /* GalleryView */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +199,7 @@
 			children = (
 				EFAF50E92A5FE077005DF359 /* TitleView */,
 				EFB0A4E52A5EB9FF0034F807 /* GalleryView */,
+				EFAF50F02A600FC8005DF359 /* FooterView */,
 				EFBFD1222A5C1CD2005C4721 /* Cell */,
 				EFBFD1202A5C0B19005C4721 /* NewsfeedViewController.storyboard */,
 				EFBFD1162A5C076F005C4721 /* NewsfeedViewController.swift */,
@@ -201,7 +225,6 @@
 		EFBFD1272A5C47B2005C4721 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				EFBFD1282A5C47C2005C4721 /* WebImageView.swift */,
 				EFD047182A5D630100AC4ABD /* String+Extensions.swift */,
 				EFD0471C2A5D9E8700AC4ABD /* LayoutConstraints+Extension.swift */,
 			);
@@ -230,8 +253,10 @@
 			isa = PBXGroup;
 			children = (
 				EFD0471E2A5DA83500AC4ABD /* AppConsts.swift */,
+				EFAF50F72A601CC4005DF359 /* Views */,
 				EFBFD1272A5C47B2005C4721 /* Helpers */,
 				F0A1F8802406E83A002A9CCC /* Info.plist */,
+				EFAF50F32A601335005DF359 /* Localizable.stringsdict */,
 				F0A1F8722406E838002A9CCC /* AppDelegate.swift */,
 				F0A1F8742406E838002A9CCC /* SceneDelegate.swift */,
 				EFB7DC9E2A580473002F1B9B /* Services */,
@@ -309,6 +334,7 @@
 				EFBFD1212A5C0B19005C4721 /* NewsfeedViewController.storyboard in Resources */,
 				F0A1F87C2406E83A002A9CCC /* Assets.xcassets in Resources */,
 				EFBFD1262A5C1D04005C4721 /* NewsfeedCell.xib in Resources */,
+				EFAF50F42A601335005DF359 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +390,7 @@
 				EFB0A4E72A5EBA140034F807 /* GalleryCollectionView.swift in Sources */,
 				EFAF50EF2A5FE7FE005DF359 /* UserResponse.swift in Sources */,
 				EF1F6C152A58529A0069D95D /* FeedResponse.swift in Sources */,
+				EFAF50F22A600FDE005DF359 /* FooterView.swift in Sources */,
 				EFB0A4EB2A5EE69B0034F807 /* RowLayout.swift in Sources */,
 				EFBFD11D2A5C076F005C4721 /* NewsfeedViewController.swift in Sources */,
 				F0A1F8772406E838002A9CCC /* AuthViewController.swift in Sources */,
@@ -378,6 +405,7 @@
 				EFBFD11C2A5C076F005C4721 /* NewsfeedModels.swift in Sources */,
 				EFD0471D2A5D9E8700AC4ABD /* LayoutConstraints+Extension.swift in Sources */,
 				EFD047172A5D579700AC4ABD /* NewsfeedCellLayoutCalculator.swift in Sources */,
+				EFAF50F62A60188B005DF359 /* GradientView.swift in Sources */,
 				EFBFD1292A5C47C2005C4721 /* WebImageView.swift in Sources */,
 				EF1F6C172A585D4D0069D95D /* NetworkDataFetcher.swift in Sources */,
 				EFBFD11A2A5C076F005C4721 /* NewsfeedWorker.swift in Sources */,
@@ -531,6 +559,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = VKNewsfeed/Info.plist;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -559,6 +588,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = VKNewsfeed/Info.plist;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
