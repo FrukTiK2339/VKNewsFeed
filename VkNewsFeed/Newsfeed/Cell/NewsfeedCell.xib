@@ -132,14 +132,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kT-y5-7vu">
-                                <rect key="frame" x="8" y="52" width="313" height="37"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="TextView" textAlignment="natural" id="tHF-9W-6jl">
+                                <rect key="frame" x="8" y="52" width="321" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -154,7 +155,7 @@
                 <outlet property="likesLabel" destination="gq1-Cr-lO8" id="JVc-5i-7o6"/>
                 <outlet property="nameLabel" destination="gEX-Qh-lnC" id="ipV-Q7-1sg"/>
                 <outlet property="postImageView" destination="YqS-j3-IwX" id="Sx6-Kc-6Y3"/>
-                <outlet property="postLabel" destination="8kT-y5-7vu" id="pAO-mC-VfC"/>
+                <outlet property="postLabel" destination="tHF-9W-6jl" id="Jtj-ok-uA8"/>
                 <outlet property="sharesLabel" destination="5fC-eX-kgn" id="CX2-cG-1uj"/>
                 <outlet property="viewsLabel" destination="QDA-XV-TYq" id="pce-8l-YX5"/>
             </connections>
@@ -166,6 +167,9 @@
         <image name="eye" width="20" height="20"/>
         <image name="like" width="24" height="24"/>
         <image name="share" width="24" height="24"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

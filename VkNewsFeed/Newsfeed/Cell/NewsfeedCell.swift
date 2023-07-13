@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol NewsfeedCellDelegate: AnyObject {
+    func revealPost(for cell: NewsfeedCell)
+}
+
 protocol FeedCellViewModel {
     var iconURLString: String { get }
     var name: String { get }
@@ -16,7 +20,7 @@ protocol FeedCellViewModel {
     var comments: String? { get }
     var shares: String? { get }
     var views: String? { get }
-    var photoAttachment: FeedCellPhotoAttachmentViewModel? { get }
+    var photoAttachments: [FeedCellPhotoAttachmentViewModel] { get }
     var sizes: FeedCellSizes { get }
 }
 
@@ -24,6 +28,7 @@ protocol FeedCellSizes {
     var postLabelFrame: CGRect { get }
     var attachmentFrame: CGRect { get }
     var bottomViewFrame: CGRect { get }
+    var moreTextButtonFrame: CGRect { get }
     var totalHeight: CGFloat { get }
 }
 
@@ -37,11 +42,13 @@ class NewsfeedCell: UITableViewCell {
     
     static let reuseId = "NewsfeedCell"
     
+    weak var delegate: NewsfeedCellDelegate?
+    
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var iconImageView: WebImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var postLabel: UILabel!
+    @IBOutlet weak var postLabel: UITextView!
     @IBOutlet weak var postImageView: WebImageView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var likesLabel: UILabel!
@@ -54,6 +61,18 @@ class NewsfeedCell: UITableViewCell {
         postImageView.set(imageURL: nil)
     }
     
+    let moreTextButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        button.setTitleColor(UIColor(named: "moreTextButtonColor"), for: .normal)
+        button.contentHorizontalAlignment = .left
+        button.contentVerticalAlignment = .center
+        button.setTitle("Показать полностью...", for: .normal)
+        return button
+    }()
+    
+    let galleryCollectionView = GalleryCollectionView()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         iconImageView.layer.cornerRadius = iconImageView.frame.width / 2
@@ -64,6 +83,14 @@ class NewsfeedCell: UITableViewCell {
         
         backgroundColor = .clear
         selectionStyle = .none
+        
+        cardView.addSubview(moreTextButton)
+        moreTextButton.addTarget(self, action: #selector(moreTextButtonTap), for: .touchUpInside)
+        
+        cardView.addSubview(galleryCollectionView)
+        
+        let padding = postLabel.textContainer.lineFragmentPadding
+        postLabel.textContainerInset = UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
     }
     
     func set(viewModel: FeedCellViewModel) {
@@ -77,15 +104,28 @@ class NewsfeedCell: UITableViewCell {
         viewsLabel.text = viewModel.views
         
         postLabel.frame = viewModel.sizes.postLabelFrame
-        postImageView.frame = viewModel.sizes.attachmentFrame
+       
         bottomView.frame = viewModel.sizes.bottomViewFrame
+        moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
         
-        if let photoAttachment = viewModel.photoAttachment {
+        if let photoAttachment = viewModel.photoAttachments.first, viewModel.photoAttachments.count == 1 {
             postImageView.set(imageURL: photoAttachment.photoURLString)
+            postImageView.frame = viewModel.sizes.attachmentFrame
             postImageView.isHidden = false
+            galleryCollectionView.isHidden = true
+        } else if viewModel.photoAttachments.count > 1 {
+            galleryCollectionView.frame = viewModel.sizes.attachmentFrame
+            postImageView.isHidden = true
+            galleryCollectionView.isHidden = false
+            galleryCollectionView.set(photos: viewModel.photoAttachments)
         } else {
             postImageView.isHidden = true
+            galleryCollectionView.isHidden = true
         }
+    }
+    
+    @objc func moreTextButtonTap() {
+        delegate?.revealPost(for: self)
     }
     
 }
